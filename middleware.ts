@@ -2,9 +2,11 @@ import { withAuth } from "next-auth/middleware"
 
 export default withAuth(
   async function middleware(req) {
-    console.log(2)
-    
-   
+
+      
+    //it does check if jwt.verify token and also check the expiry date as it should
+  //   const token = await getToken({req})
+  //  if(!token) return NextResponse.redirect(new URL('/api/auth/signin',req.url))
   },
   {
     callbacks: {

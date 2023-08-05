@@ -1,0 +1,11 @@
+- We can rotate token with google signin in jwt callback
+- If we want to rotate jwt token we cannot use middleware
+   - middleware only runs on edge so 
+        - we cannot use middleware if we refresh token as we cannot call
+            - getServerSession, getSession, useSession from there
+   - And also because getToken() doesn't run jwt callback
+   -Only  getSession, useSession, getServerSession can call the next auth callback
+
+
+So ***Yes*** you can rotate token
+But don't use middleware and protect each individual routes
