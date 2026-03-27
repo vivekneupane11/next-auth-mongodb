@@ -1,12 +1,23 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Manrope, Sora } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+const manrope = Manrope({
+  subsets: ['latin'],
+  variable: '--font-manrope',
+  display: 'swap',
+})
+
+const sora = Sora({
+  subsets: ['latin'],
+  variable: '--font-sora',
+  display: 'swap',
+  weight: ['600', '700', '800'],
+})
 
 export const metadata: Metadata = {
-  title: 'Next Auth MongoDB — Products',
-  description: 'Browse products backed by MongoDB',
+  title: 'Northline Supply — Catalog',
+  description: 'Browse the catalog backed by MongoDB',
 }
 
 export default function RootLayout({
@@ -15,8 +26,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className={`${manrope.variable} ${sora.variable}`}>
+      <body className="font-sans">{children}</body>
     </html>
   )
 }
